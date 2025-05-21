@@ -13,9 +13,10 @@ useEffect(()=>{
   const LoggedInUser = localStorage.getItem('LogedInUser')
   if(LoggedInUser){
     const userData = JSON.parse(LoggedInUser)
-    console.log(userData)
+    setUser(userData.role)
+    setLogenInUserData(userData.data)
   }
-})
+},[])
 
 
 
@@ -29,7 +30,7 @@ useEffect(()=>{
       if(employ){
         setLogenInUserData(employ)
         setUser('employee')
-        localStorage.setItem('LogedInUser' , JSON.stringify({role:'employee'}))
+        localStorage.setItem('LogedInUser' , JSON.stringify({role:'employee' , data : employ}))
       }
     }
     else {

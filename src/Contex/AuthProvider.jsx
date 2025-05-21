@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 
 export const AuthContext = createContext()
 const AuthProvider = ({children}) => {
-
+// localStorage.clear()
     
     const [userdata, setuserData] = useState(null)
 
